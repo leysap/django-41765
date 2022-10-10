@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Listado de personas:</p>
-    {% for persona in personas %}
-    <li>{{persona.nombre}} {{persona.apellido}} {{persona.edad}} {{persona.fecha_nacimiento}}</li>
+{% extends "home/index.html" %}
+{% block "mi_contenido" %}
+
+{% block "title_pagina" %}
+<title>Ver personas</title>
+{% endblock "title_pagina" %}
+
+
+<a class="navbar-brand" href={% url 'index' %}>Index</a>
+<p>Listado de personas:</p>
+{% for persona in personas %}
+<li>{{persona.nombre}} {{persona.apellido}} {{persona.edad}} {{persona.fecha_nacimiento}}</li>
     
-    {% endfor %}
-</body>
-</html>
+{% endfor %}
+
+{% endblock "mi_contenido" %}

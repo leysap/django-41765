@@ -5,5 +5,8 @@ class Persona(models.Model):
     apellido=models.CharField(max_length=30)
     edad=models.IntegerField()
     fecha_nacimiento = models.DateTimeField(null=True)
+    
+    def __str__(self):
+        return f'{self.nombre} {self.apellido}'
 
 
