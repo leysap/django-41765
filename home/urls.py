@@ -10,6 +10,6 @@ urlpatterns = [
     path('mi-template/<str:nombre>', views.tu_template),
     path('prueba-template/', views.prueba_template),
     path('ver-personas/', views.ver_personas, name="ver_personas"),
-    path('crear-persona/<str:nombre>/<str:apellido>/', views.crear_persona),
+    path('crear-persona/', views.crear_persona, name="crear_persona"),
 
 ]

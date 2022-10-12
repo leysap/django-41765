@@ -6,11 +6,20 @@
 {% endblock "title_pagina" %}
 
 
-<a class="navbar-brand" href={% url 'index' %}>Index</a>
+<a class="navbar-brand" href={% url 'crear_persona' %}>Crear persona</a>
 <p>Listado de personas:</p>
-{% for persona in personas %}
-<li>{{persona.nombre}} {{persona.apellido}} {{persona.edad}} {{persona.fecha_nacimiento}}</li>
-    
-{% endfor %}
+
+<form action={% url 'ver_personas' %} method="GET">
+    {{formulario}}
+    <button>BUSCAR</button>
+</form>
+
+<p>
+    {% for persona in personas %}
+    <li>{{persona.nombre}} {{persona.apellido}} {{persona.edad}} {{persona.fecha_nacimiento}}</li>
+        
+    {% endfor %}
+
+</p>
 
 {% endblock "mi_contenido" %}
