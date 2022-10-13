@@ -15,10 +15,16 @@
 </form>
 
 <p>
+    {% if personas %}
     {% for persona in personas %}
     <li>{{persona.nombre}} {{persona.apellido}} {{persona.edad}} {{persona.fecha_nacimiento}}</li>
         
     {% endfor %}
+    {% else %}
+    <p>No se encontraron resultados</p>
+    {% endif %}
+
+    
 
 </p>
 

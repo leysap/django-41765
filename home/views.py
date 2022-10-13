@@ -59,7 +59,13 @@ def crear_persona(request):
             nombre = data['nombre']
             apellido = data['apellido']
             edad = data['edad']
-            fecha_nacimiento= data.get('fecha_nacimiento', datetime.now())
+            #v1
+            fecha_nacimiento= data['fecha_nacimiento']
+            if not fecha_nacimiento:
+                fecha_nacimiento=datetime.now()
+            #v2
+            # fecha_nacimiento=data['fecha_nacimiento'] or datetime.now()
+                
             persona = Persona(nombre=nombre, apellido=apellido, edad=edad,fecha_nacimiento=fecha_nacimiento)
             persona.save()
             
